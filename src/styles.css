@@ -4,6 +4,8 @@
   --cg-blue: rgb(36, 94, 255);
   --cg-grey: rgb(243, 243, 243);
   --cg-white: rgb(255, 255, 255);
+  --cg-darkest-grey: rgb(42, 44, 44);
+  --cg-dark-grey: rgb(53, 56, 56);
 }
 
 html {
@@ -11,7 +13,8 @@ html {
 }
 
 body {
-  background: var(--cg-grey);
+  background: var(--cg-black);
+  color: var(--cg-white);
   position: relative;
   min-height: 100vh;
   padding: 0;
@@ -97,11 +100,14 @@ main {
 
 /* CSS for portfolio grid */
 
-.project {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  margin: 1em 0 2em 0;
+.projects {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5em;
+  justify-items: center;
+  width: 100%;
+  align-items: start;
+  box-sizing: border-box;
 
   /* Debug border */
   /* border: 2px solid blue; */
@@ -114,41 +120,50 @@ main {
   /* border: 2px solid red; */
 }
 
-.project-image {
+.project-img {
   object-fit: cover;
-  width: 100%;
-  height: 500px;
+  max-width: 100%;
   flex-basis: 50px;
   flex-grow: 2;
+  border-radius: 20px;
 
   /* Debug border */
   /* border: 2px solid black; */
 }
 
 .project-details {
+  border-radius: 20px;
   display: flex;
-  background-color: var(--cg-white);
-  width: 30%;
-  height: 500px;
+  background-color: var(--cg-darkest-grey);
+  width: 450px;
+  height: 450px;
   flex-shrink: 1;
-  padding: 0 20px;
-  margin: 0px;
+  padding: 20px;
+  margin: 10px;
   line-height: 1.5;
-  overflow: scroll;
+  overflow: hidden;
 
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  align-items: stretch;
+
+  font-weight: lighter;
+  transition: transform 0.2s, color 0.2s;
 
   /* Debug border */
   /* border: 2px solid green; */
 }
 
 .project-details a {
-  color: var(--cg-black);
+  color: var(--cg-white);
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+.project-details h2 {
+  margin: 0px 10px;
 }
 
 .project-details a:hover {
@@ -156,8 +171,9 @@ main {
   text-decoration: underline;
 }
 
-.project-details {
-  font-weight: lighter;
+.project-details:hover {
+  transform: scale(1.05);
+  background: var(--cg-dark-grey);
 }
 
 .project-name {
@@ -172,8 +188,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
+  background-color: var(--cg-dark-grey);
   border-radius: 5px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
