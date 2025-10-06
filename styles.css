@@ -149,7 +149,6 @@ main {
   align-items: stretch;
 
   font-weight: lighter;
-  transition: transform 0.2s, color 0.2s;
 
   /* Debug border */
   /* border: 2px solid green; */
@@ -171,8 +170,14 @@ main {
   text-decoration: underline;
 }
 
-.project-details:hover {
+.project-details:hover,
+.speech-bubble-horizontal:hover,
+.speech-bubble-vertical:hover,
+.about-image:hover {
   transform: scale(1.05);
+}
+
+.project-details:hover {
   background: var(--cg-dark-grey);
 }
 
@@ -183,35 +188,96 @@ main {
 
 /* CSS for home page */
 
-.about {
+.speech-bubble,
+.speech-bubble-small {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   background-color: var(--cg-dark-grey);
-  border-radius: 5px;
+  border-radius: 20px;
+  margin-bottom: 20px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.speech-bubble-horizontal {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.speech-bubble-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.img-with-speech {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.speech-bubble-horizontal,
+.speech-bubble-vertical,
+.project-details,
+.about-image {
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.about-image {
+  margin-right: 70px;
 }
 
 .about-image img {
   max-width: 300px;
-  border-radius: 3px;
+  border-radius: 50%;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 
-.about-text {
+.speech-tri-left {
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 100px solid var(--cg-dark-grey);
+  border-bottom: 50px solid transparent;
+}
+
+.speech-tri-up {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid var(--cg-dark-grey);
+  margin-left: 100px;
+}
+
+.about-text,
+.hobby-text {
   flex: 1;
   margin-left: 20px;
 }
 
-.about-text h2 {
+.about-text,
+.hobby-text h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
-.about-text p {
-  font-size: 16px;
+.about-text,
+.hobby-text p {
+  font-size: 30px;
   line-height: 1.5;
+}
+
+.hobby-text {
+  text-align: center;
 }
 
 /* CSS for resume page */
