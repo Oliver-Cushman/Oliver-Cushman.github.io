@@ -6,6 +6,9 @@
   --cg-white: rgb(255, 255, 255);
   --cg-darkest-grey: rgb(42, 44, 44);
   --cg-dark-grey: rgb(53, 56, 56);
+  --cg-darkest-pink: rgb(83, 34, 46);
+  --cg-dark-pink: rgb(121, 44, 62);
+  --cg-light-pink: rgb(255, 83, 123);
 }
 
 html {
@@ -20,6 +23,15 @@ body {
   padding: 0;
   margin: 0;
   font-family: monospace;
+}
+
+#beach-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
 /* CSS for navigation */
@@ -37,8 +49,7 @@ body {
   align-items: center;
   text-align: center;
 
-  background-color: var(--cg-black);
-  color: var(--cg-white);
+  background-color: transparent;
   padding: 0px 0px;
 
   /* Debug border */
@@ -67,7 +78,7 @@ body {
 }
 
 .navbar a:hover {
-  color: var(--cg-blue);
+  color: var(--cg-light-pink);
   text-decoration: underline;
 }
 
@@ -134,7 +145,7 @@ main {
 .project-details {
   border-radius: 20px;
   display: flex;
-  background-color: var(--cg-darkest-grey);
+  background-color: var(--cg-darkest-pink);
   width: 450px;
   height: 450px;
   flex-shrink: 1;
@@ -166,7 +177,7 @@ main {
 }
 
 .project-details a:hover {
-  color: var(--cg-blue);
+  color: var(--cg-light-pink);
   text-decoration: underline;
 }
 
@@ -178,7 +189,7 @@ main {
 }
 
 .project-details:hover {
-  background: var(--cg-dark-grey);
+  background: var(--cg-dark-pink);
 }
 
 .project-name {
@@ -194,7 +205,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: var(--cg-dark-grey);
+  background-color: var(--cg-darkest-pink);
   border-radius: 20px;
   margin-bottom: 20px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
@@ -245,7 +256,7 @@ main {
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
-  border-right: 100px solid var(--cg-dark-grey);
+  border-right: 100px solid var(--cg-darkest-pink);
   border-bottom: 50px solid transparent;
 }
 
@@ -254,7 +265,7 @@ main {
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 100px solid var(--cg-dark-grey);
+  border-bottom: 100px solid var(--cg-darkest-pink);
   margin-left: 100px;
 }
 
@@ -276,8 +287,12 @@ main {
   line-height: 1.5;
 }
 
-.hobby-text {
-  text-align: center;
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  max-width: 1400px;
 }
 
 /* CSS for resume page */
@@ -299,6 +314,13 @@ main {
   background-color: var(--cg-blue);
 }
 
+.resume {
+  background: var(--cg-darkest-pink);
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
 .resume h2 {
   font-family: Georgia;
 }
@@ -312,6 +334,34 @@ label {
   font-weight: bold;
 }
 
+.submit-button,
+.download-link {
+  width: 70px;
+  height: 30px;
+  border: none;
+  font-family: monospace;
+  background-color: var(--cg-darkest-pink);
+  color: var(--cg-white);
+  border-radius: 15px;
+  transition: background-color 0.2s;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button:hover,
+.download-link:hover {
+  background-color: var(--cg-dark-pink);
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 18px;
+}
+
 input[type="text"],
 input[type="email"],
 textarea {
@@ -319,15 +369,19 @@ textarea {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 4px;
   font-size: 16px;
   resize: none;
+  border-radius: 18px;
+  font-family: monospace;
 }
 
 /* Add some spacing to the form */
 form {
   width: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* CSS for footer */
@@ -336,7 +390,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--cg-black);
+  background-color: transparent;
   color: var(--cg-white);
   position: absolute;
   bottom: 0;
