@@ -319,7 +319,7 @@ main {
 }
 
 .resume h2 {
-  font-family: Manrope;
+  font-family: ManRope;
 }
 
 /* CSS for contact form */
@@ -327,7 +327,7 @@ main {
 label {
   display: block;
   margin-bottom: 8px;
-  font-family: Manrope;
+  font-family: Georgia;
   font-weight: bold;
 }
 
